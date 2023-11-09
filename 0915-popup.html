@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업 창 띄우기</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(function(){
+            // 팝업창 보기 버튼을 클릭하면 팝업창 나타남
+            $('.showBtn').click(function(){
+                $('.popup').show();
+            });
+            
+            // 닫기 버튼을 클릭하면 팝업창 닫힘
+            $('.closeBtn').click(function(){
+                $('.popup').hide();
+            });            
+        });
+    </script>
+    <style>
+        *{margin: 0; padding: 0;}
+        .wrap { width: 100%; }
+        header {
+            height: 100px;
+            background-color: #ede4ff;
+        }
+        section {
+            height: 800px;
+            background-color: #c5dff8;
+        }
+        footer {
+            height: 60px;
+            background-color: #faf0e4;
+        }
+        .popup {
+            position: absolute;
+            width: 400px;
+            height: 600px;
+            text-align: center;
+            padding: 50px;
+            box-sizing: border-box;
+            background-color: #f9e0bb;
+            /* 화면 정 가운데 배치 */
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .popup .more {
+            display: block;
+            width: 120px;
+            height: 30px;
+            border-radius: 30px;
+            background-color: #ccc;
+            text-decoration: none;
+            color: #fff;
+            font-size: 14px;
+            padding-top: 10px;
+            margin: 50px auto;
+        }
+        .popup .more:hover {
+            background-color: #47a992;
+        }
+        /* 닫기버튼 */
+        .popup .closeBtn {
+            background-color: transparent;
+            font-size: 60px;
+            color: #5c8984;
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>header</header>
+        <section>section <br>
+            <button type="button" class="showBtn">
+                팝업창 보기
+            </button>
+        </section>
+        <footer>footer</footer>
+    </div>
+    <!-- 팝업창 -->
+    <div class="popup">
+        <h1>공지사항</h1>
+        <p>내용</p>
+        <div class="btn">
+            <a href="#" class="more">더보기</a>
+            <a href="#" class="closeBtn">&#215;</a>
+        </div>
+    </div>
+</body>
+</html>
